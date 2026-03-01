@@ -1,5 +1,4 @@
-import "../index.css";
-import "../App.css";
+import "./globals.css";
 import Navbar from "../Component/Navbar/Navbar";
 import Fixeditems from "../Component/Fixeditems/Fixeditems";
 
@@ -12,9 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="app">
-          <div className="outerdiv">
-            <div className="wrapper">
+        <div className="min-h-screen w-full flex justify-center text-[color:var(--text-color)] overflow-x-hidden">
+          <div className="w-full flex h-full justify-center pt-4">
+            <div className="app-wrapper">
               <Navbar />
               <Fixeditems />
               {children}

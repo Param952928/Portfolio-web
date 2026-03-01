@@ -1,13 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import "../../App.css";
 import { usePathname, useRouter } from "next/navigation";
-import { Logo, Moon_Black, Light, cross } from "../../assets/Index";
-import { menuicon } from "../../assets/Index";
+import { Logo, Moon_Black, Light, cross, menuicon } from "../../assets/Index";
 
 const Navbar = () => {
-  const location = { pathname: usePathname() || '/' };
+  const pathname = usePathname() || '/';
   const [isActive, setisActive] = useState(false);
   const [activeCatagaryIndex, setactiveCatagaryIndex] = useState("");
 
@@ -29,18 +26,29 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const url = location.pathname.slice();
+    const url = pathname;
     var extractedText = url.substring(1);
     extractedText
       ? setactiveCatagaryIndex(extractedText + "page")
       : setactiveCatagaryIndex("homepage");
-  }, []);
+  }, [pathname]);
+
+  const navLinks = [
+    { id: "homepage", path: "/", label: "Home" },
+    { id: "aboutpage", path: "/about", label: "About" },
+    { id: "resumepage", path: "/resume", label: "Resume" },
+    { id: "skillpage", path: "/skill", label: "Skills" },
+    { id: "projectpage", path: "/project", label: "Projects" },
+    { id: "contactpage", path: "/contact", label: "Contact" },
+  ];
+
   return (
-    <div className="navbar">
-      <div className="l-nav">
-        <img src={Logo} alt="" />
+    <div className="flex flex-row items-center justify-between rounded-[10px] w-full">
+      <div className="flex items-center justify-center gap-[25px]">
+        <img src={Logo} alt="Logo" className="theme-logo transition-transform duration-700 hover:rotate-[360deg] w-[25px] sm:w-[50px] md:w-auto" />
         <h1
-          onClick={(e) => {
+          className="font-bold text-[2rem] md:text-[2.5rem] cursor-pointer"
+          onClick={() => {
             navigate("/");
             setactiveCatagaryIndex("homepage");
           }}
@@ -48,177 +56,68 @@ const Navbar = () => {
           Paramjeet Singh
         </h1>
       </div>
-      <div className="r-nav">
-        <ul>
-          <li>
-            <span
-              style={
-                activeCatagaryIndex === "homepage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="homepage"
-              className="homepage"
-              onClick={(e) => {
-                navigate("/");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              Home
-            </span>
-            <span
-              style={
-                activeCatagaryIndex === "aboutpage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="aboutpage"
-              onClick={(e) => {
-                navigate("/about");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              About
-            </span>
-            <span
-              style={
-                activeCatagaryIndex === "resumepage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="resumepage"
-              onClick={(e) => {
-                navigate("/resume");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              Resume
-            </span>
-            <span
-              style={
-                activeCatagaryIndex === "skillpage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="skillpage"
-              onClick={(e) => {
-                navigate("/skill");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              Skills
-            </span>
-            <span
-              style={
-                activeCatagaryIndex === "projectpage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="projectpage"
-              onClick={(e) => {
-                navigate("/project");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              Projects
-            </span>
-            <span
-              style={
-                activeCatagaryIndex === "contactpage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              id="contactpage"
-              onClick={(e) => {
-                navigate("/contact");
-                setactiveCatagaryIndex(e.target.id);
-              }}
-            >
-              Contact
-            </span>
+      <div className="flex items-center">
+        <ul className="hidden md:flex items-center list-none m-0 p-0">
+          <li className="flex items-center">
+            {navLinks.map((link) => (
+              <span
+                key={link.id}
+                id={link.id}
+                className={`mr-[25px] font-semibold text-[1.4rem] no-underline text-[color:var(--theme-black)] cursor-pointer ${
+                  activeCatagaryIndex === link.id ? "border-b-[2px] border-[color:var(--theme-black)]" : ""
+                }`}
+                onClick={(e) => {
+                  navigate(link.path);
+                  setactiveCatagaryIndex(link.id);
+                }}
+              >
+                {link.label}
+              </span>
+            ))}
           </li>
         </ul>
         <img
           onClick={() => changetheme()}
           src={theme === "darktheme" ? Light : Moon_Black}
-          alt="img not found"
+          alt="Theme toggle"
+          className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] cursor-pointer mr-[10px] md:mr-[0px]"
         />
         <img
-          className="menu"
+          className="theme-menu md:hidden flex w-[20px] h-[20px] mx-[10px] cursor-pointer"
           src={menuicon}
-          alt=""
+          alt="Menu"
           onClick={() => setisActive(!isActive)}
         />
       </div>
-      <div className={`flotnav ${isActive ? "active" : ""} `}>
+
+      <div
+        className={`w-full overflow-hidden h-auto py-[20px] bg-[color:var(--theme-black)] z-[600] fixed top-0 left-0 transition-transform duration-800 ease-in-out border-[10px] border-transparent ${
+          isActive ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <img
-          className="cross"
+          className="absolute right-[10px] top-[10px] filter drop-shadow-[0_0_0_var(--theme-white)] cursor-pointer z-50"
           src={cross}
           onClick={() => setisActive(false)}
-          alt=""
+          alt="Close"
         />
-        <ul>
-          <li>
-            <span
-              className="homepage"
-              style={
-                activeCatagaryIndex === "homepage"
-                  ? { borderBottom: "1px solid var(--black)" }
-                  : { borderBottom: "" }
-              }
-              onClick={(e) => {
-                navigate("/");
-                setactiveCatagaryIndex("homepage");
-                setisActive(false);
-              }}
-            >
-              Home
-            </span>
-            <span
-              onClick={(e) => {
-                navigate("/about");
-                setactiveCatagaryIndex(e.target.id);
-                setisActive(false);
-              }}
-            >
-              About
-            </span>
-            <span
-              onClick={(e) => {
-                navigate("/resume");
-                setactiveCatagaryIndex(e.target.id);
-                setisActive(false);
-              }}
-            >
-              Resume
-            </span>
-            <span
-              onClick={(e) => {
-                navigate("/skill");
-                setactiveCatagaryIndex(e.target.id);
-                setisActive(false);
-              }}
-            >
-              Skills
-            </span>
-            <span
-              onClick={(e) => {
-                navigate("/project");
-                setactiveCatagaryIndex(e.target.id);
-                setisActive(false);
-              }}
-            >
-              Projects
-            </span>
-            <span
-              onClick={(e) => {
-                navigate("/contact");
-                setactiveCatagaryIndex(e.target.id);
-                setisActive(false);
-              }}
-            >
-              Contact
-            </span>
+        <ul className="m-0 p-0 w-full">
+          <li className="flex flex-col gap-[10px] px-[10px] py-[20px] text-[color:var(--theme-black)]">
+            {navLinks.map((link) => (
+              <span
+                key={link.id}
+                className={`text-[color:var(--theme-white)] text-[2rem] cursor-pointer ${
+                  activeCatagaryIndex === link.id ? "border-b-[2px] border-[color:var(--theme-black)]" : ""
+                }`}
+                onClick={(e) => {
+                  navigate(link.path);
+                  setactiveCatagaryIndex(link.id);
+                  setisActive(false);
+                }}
+              >
+                {link.label}
+              </span>
+            ))}
           </li>
         </ul>
       </div>

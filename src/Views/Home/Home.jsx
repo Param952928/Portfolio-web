@@ -1,11 +1,6 @@
 "use client";
 import React from 'react'
-import "./Home.css"
-import {
-    Hello,
-    Wave,
-    Paramjeet_Resume
-} from "../../assets/Index"
+import { Hello, Wave, Paramjeet_Resume } from "../../assets/Index"
 
 const Home = () => {
 
@@ -23,22 +18,43 @@ const Home = () => {
             }).catch(blobErr => console.error("Error creating blob:", blobErr));
         }).catch(fetchErr => console.error("Error fetching PDF:", fetchErr));
     }
+
     return (
-        <div className='homediv' >
-            <div className="homechild">
-                <div className="cvbox">
-                    <img src={Hello} alt="" />
-                    <h1>I'm <span>Paramjeet Singh</span> <span><img src={Wave} alt="" /></span></h1>
-                    <h3>I am a Full Stack Developer with 3+ years of experience in building scalable, high-performance web applications using React.js, Node.js, Express.js, Next.js, and Laravel.</h3>
-                    <div className="twobutton">
-                        <button onClick={onButtonClick}>Download CV</button>
-                        <a href="www.linkedin.com/in/paramjeet-singh-rathore-b05576183/" target="_blank"
-                            rel="noreferrer">
-                            <button className='touchbtn'> Get in Touch!</button>
+        <div className='flex items-center justify-center min-h-[85vh] py-[40px] w-full' >
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full px-[20px] md:px-[60px] lg:px-[100px] max-w-[1500px] gap-[40px] md:gap-[15px]">
+                <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left gap-[25px] w-full md:w-[55%]">
+                    <img src={Hello} alt="Hello" className="hidden lg:block w-[140px] transition-all duration-400 ease hover:ml-[70px] hover:scale-110" />
+                    
+                    <h1 className="font-semibold text-[2.5rem] md:text-[4rem] flex flex-wrap items-center justify-center md:justify-start gap-2">
+                        <span>I'm</span> 
+                        <span className="text-[#777777]">Paramjeet Singh</span> 
+                        <span>
+                            <img src={Wave} alt="Wave" className="w-[20px] md:w-[30px] transition-transform duration-700 hover:rotate-[45deg]" />
+                        </span>
+                    </h1>
+                    
+                    <h3 className="font-light text-[1.5rem] md:text-[2rem] font-serif leading-snug">
+                       I am a Full Stack Developer with 3+ years of experience in building scalable, high-performance web applications using React.js, Node.js, Express.js, Next.js, and Laravel.
+                    </h3>
+                    
+                    <div className="flex justify-center md:justify-start gap-[20px] mt-[10px] w-full">
+                        <button 
+                            onClick={onButtonClick} 
+                            className="w-[120px] md:w-[150px] h-[40px] md:h-[50px] bg-gradient-to-r from-[#df580c] to-[#fd993d] border-[3px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.25)] rounded-[10px] text-[#e9e4f0] font-bold text-[1.4rem] transition-transform duration-400 hover:scale-105 cursor-pointer"
+                        >
+                            Download CV
+                        </button>
+                        <a href="https://www.linkedin.com/in/paramjeet-singh-rathore-b05576183/" target="_blank" rel="noreferrer">
+                            <button className="w-[120px] md:w-[150px] h-[40px] md:h-[50px] bg-gradient-to-r from-[#434343] to-[#000000] border-[3px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.25)] rounded-[10px] text-[#e9e4f0] font-bold text-[1.4rem] transition-transform duration-400 hover:scale-105 cursor-pointer">
+                                Get in Touch!
+                            </button>
                         </a>
                     </div>
                 </div>
-                <div className="profile" ></div>
+
+                <div 
+                    className="w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px] bg-[url('/assets/Dp.jpg')] bg-cover rounded-[40%] transition-all duration-400 ease hover:rounded-[50%] hover:scale-110" 
+                />
             </div>
         </div>
     )
