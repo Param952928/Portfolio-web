@@ -54,13 +54,14 @@ const Projects = () => {
     ])
 
     return (
-        <div className="flex flex-col items-center text-[color:var(--text-color)] w-full my-[15px]">
-            <h1 className="border-b-[2px] border-[color:var(--theme-black)] text-[color:var(--theme-black)] mt-[10px] text-[3.5rem] mb-[40px] font-bold">Projects</h1>
+        <div className="flex flex-col items-center text-[color:var(--text-color)] w-full py-[40px] min-h-[85vh]">
+            <h1 className="border-b-[4px] border-[color:var(--theme-black)] text-[color:var(--theme-black)] mt-[10px] text-[3.5rem] mb-[60px] font-extrabold tracking-tight animate-slide-up">Projects <span className="text-[#0B0080]">.</span></h1>
             {
                 prodata.map((data, index) => {
                     return (
                         <div 
-                            className="mt-[20px] mb-[30px] bg-transparent border-[2px] border-[color:var(--theme-black)] rounded-[30px] p-[20px] md:p-[40px] flex flex-col items-center justify-evenly w-full lg:w-[95%] xl:w-[90%] max-w-[1300px] h-auto gap-[20px] relative text-[color:var(--text-color)] transition-all duration-400 ease hover:shadow-xl hover:-translate-y-2" 
+                            className="mt-[20px] mb-[40px] bg-[color:var(--theme-white)]/30 backdrop-blur-md border-[1px] border-[color:var(--theme-black)]/20 rounded-[40px] p-[30px] md:p-[50px] flex flex-col items-center justify-evenly w-full lg:w-[95%] xl:w-[90%] max-w-[1300px] h-auto gap-[20px] relative text-[color:var(--text-color)] transition-all duration-500 ease hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:border-[color:var(--theme-black)]/40 hover:-translate-y-3 animate-slide-up" 
+                            style={{ animationDelay: `${index * 150}ms`, opacity: 0, animationFillMode: "forwards" }}
                             key={index}
                         >
                             <h1 className="font-bold text-[2.8rem] border-b-[3px] border-[color:var(--theme-black)] text-[color:var(--theme-black)] pb-2 mb-4 w-full text-center lg:text-left">{data.title}</h1>

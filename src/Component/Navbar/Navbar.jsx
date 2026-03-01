@@ -43,7 +43,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-between rounded-[10px] w-full">
+    <nav className="sticky top-[10px] z-[100] flex flex-row items-center justify-between rounded-full w-[95%] mx-auto bg-[color:var(--theme-white)]/60 backdrop-blur-xl border-[1px] border-[color:var(--theme-black)]/20 shadow-lg px-[20px] md:px-[30px] py-[15px] transition-all animate-slide-up">
       <div className="flex items-center justify-center gap-[25px]">
         <img src={Logo} alt="Logo" className="theme-logo transition-transform duration-700 hover:rotate-[360deg] w-[25px] sm:w-[50px] md:w-auto" />
         <h1
@@ -121,7 +121,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
