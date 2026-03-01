@@ -13,46 +13,25 @@ import {
 } from "../assets/Index";
 
 export const Skillsdata = [
-  { name: "HTML 5", img: html },
   { name: "React Js", img: reactjs },
-  {
-    name: "Node Js",
-    img: nodejs,
-  },
-  {
-    name: "Mongodb",
-    img: mongodb,
-  },
-  {
-    name: "Express Js",
-    img: expressjs,
-  },
-  {
-    name: "Python",
-    img: python,
-  },
-  {
-    name: "Redux Toolkit",
-    img: redux,
-  },
-  {
-    name: "React Native",
-    img: reactjs,
-  },
-  {
-    name: "Java Script",
-    img: javascript,
-  },
-  {
-    name: "MY SQL",
-    img: mysql,
-  },
-  {
-    name: "GitHub",
-    img: githublogo,
-  },
-  {
-    name: "css 3 ",
-    img: css,
-  },
+  { name: "Vue.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+  { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "Redux", img: redux },
+  { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { name: "Node Js", img: nodejs },
+  { name: "Express Js", img: expressjs },
+  { name: "PHP", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+  { name: "Laravel", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+  { name: "MySQL", img: mysql },
+  { name: "MongoDB", img: mongodb },
+  { name: "DynamoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "AWS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "Docker", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: "Tailwind CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Material UI", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" },
+  { name: "JavaScript", img: javascript },
+  { name: "HTML 5", img: html },
+  { name: "CSS 3", img: css },
+  { name: "Git", img: githublogo },
+  { name: "Postman", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
 ];

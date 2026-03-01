@@ -10,45 +10,16 @@ const About = () => {
         <br />
         <br />
         <p>
-          Hello, I am Paramjeet Singh. As a highly skilled Full Stack Developer with over
-          4 years of experience, I specialize in crafting dynamic, scalable, and
-          responsive web applications. My expertise lies in HTML5, CSS3,
-          JavaScript, and Node.js, making me proficient in both front-end and
-          back-end development.
+          Hello, I am Paramjeet Singh. I am a Full Stack Developer with 3+ years of experience in building scalable, high-performance web applications using React.js, Node.js, Express.js, Next.js, and Laravel.
           <br />
           <br />
-          On the front-end, I excel in React.js, NextJs, a powerful JavaScript library
-          that allows for the creation of interactive user interfaces. I am
-          adept at designing responsive layouts, managing state and props, and
-          seamlessly integrating with APIs and back-end services.
+          I am proficient in JavaScript, TypeScript, and PHP with strong expertise in REST APIs, MVC architecture, and serverless applications. My database experience includes designing and optimizing databases like MySQL, MongoDB, and DynamoDB.
           <br />
           <br />
-          On the back-end, my experience with Node.js, a JavaScript runtime
-          built on Chrome's V8 engine, allows me to build high-performance,
-          scalable applications. I have a strong command of creating RESTful
-          APIs using Express.js, a robust web framework for Node.js that
-          simplifies the development of server-side applications.
+          I have extensive experience deploying cloud-based solutions on AWS (EC2, Lambda, S3, RDS, Cognito) and integrating third-party APIs such as Twilio, Mailgun, Deepgram, and OpenAI to deliver intelligent automation and enhanced user experiences.
           <br />
           <br />
-          I am also well-versed in MongoDB, a NoSQL database designed for
-          handling large volumes of data. My experience with MongoDB includes
-          storing and managing data in a flexible, scalable, and secure manner,
-          ensuring the integrity and accessibility of application data.
-          <br />
-          <br />
-          In addition to the core technologies, I am proficient in TypeScript,
-          Redux, React Router, MySQL, MongoDB, and various development tools
-          such as Visual Studio Code, Git, and Postman. I am also experienced
-          with AWS, providing a solid foundation for deploying and managing
-          applications in the cloud.
-          <br />
-          <br />
-          Overall, as a Full Stack Developer, I am equipped to handle all
-          aspects of web application development, from front-end design to
-          back-end architecture and deployment. I am passionate about staying
-          up-to-date with the latest trends in web development and continuously
-          improving my skills to deliver top-quality software solutions that
-          meet the needs of clients and users alike.
+          Overall, I am passionate about leveraging modern frameworks and cloud technologies to solve complex business problems and continuously improving my skills to deliver top-quality software solutions.
         </p>
         <br />
         <p></p>

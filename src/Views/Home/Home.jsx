@@ -29,7 +29,7 @@ const Home = () => {
                 <div className="cvbox">
                     <img src={Hello} alt="" />
                     <h1>I'm <span>Paramjeet Singh</span> <span><img src={Wave} alt="" /></span></h1>
-                    <h3>I am a skilled MERN stack developer, proficient in building dynamic web applications using MongoDB, Express, React and Node.js.</h3>
+                    <h3>I am a Full Stack Developer with 3+ years of experience in building scalable, high-performance web applications using React.js, Node.js, Express.js, Next.js, and Laravel.</h3>
                     <div className="twobutton">
                         <button onClick={onButtonClick}>Download CV</button>
                         <a href="www.linkedin.com/in/paramjeet-singh-rathore-b05576183/" target="_blank"

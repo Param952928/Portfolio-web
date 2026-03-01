@@ -110,6 +110,20 @@ const Navbar = () => {
             </span>
             <span
               style={
+                activeCatagaryIndex === "projectpage"
+                  ? { borderBottom: "1px solid var(--black)" }
+                  : { borderBottom: "" }
+              }
+              id="projectpage"
+              onClick={(e) => {
+                navigate("/project");
+                setactiveCatagaryIndex(e.target.id);
+              }}
+            >
+              Projects
+            </span>
+            <span
+              style={
                 activeCatagaryIndex === "contactpage"
                   ? { borderBottom: "1px solid var(--black)" }
                   : { borderBottom: "" }
